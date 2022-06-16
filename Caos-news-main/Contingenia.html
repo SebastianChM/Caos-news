@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caos News</title>
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "estilos.css">
+    <meta http-equiv = "X-UA-Compatible" content="IE= edge">
+    <meta name = "viewport" content="width =device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href= "img/CaosNews.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+</head>
+
+    <div class = "container">
+
+            
+        <br>
+        <header>
+            <nav class = "navbar navbar-default navbar-static-top">
+                <div class = "container-fluid">
+                    <div class="navbar-header">
+                        <button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = "#navbar-1"> </button>
+                        <span class = "sr-only"> Menu </span>
+
+                        </button>
+                    <img src = "img/CaosNews.png" alt = "Logo CaosNews" class = "nav-brand"> 
+                    <a href = "MainCaosNews.html" class = "navbar-brand"> Caos News </a>
+                    </div>
+
+                    <div class = "collapse navbar-collapse" id = "navbar-1">
+                        <ul class = "nav navbar-nav">
+                            <li> <a href = "MainCaosNews.html"> Inicio </a> </li>
+                            <li> <a href = "IniciarSesión.html"> Iniciar sesión </a> </li>
+                            <li> <a href = "RegistroCaosNew.html"> Registro </a> </li>
+                            <li> <a href = "Categorias.html"> Categorias </a> </li>
+                            <li> <a href = "Crea tu propia noticia.html"> Crea tu propia noticia </a> </li>
+                            <li> <a href = "Contingenia.html"> Contingencia </a> </li>
+                            
+                        </ul>
+                        <form action = "" class = "navbar-form navbar-right " role = "search">
+                            <div class="form-group">
+                                <input type = "text" class = "form-control" placeholder = "Buscar">
+                            </div>
+                    
+                        </form>
+                    </div>
+                </div>
+            </nav> 
+        </header> 
+    </div>   
+ 
+    <body>
+
+    <div class="container">
+        <hr>
+        <div>
+            
+        </div>
+            <H1>En esta sección podrás ver las noticias más relevantes en tiempo real en contingencia.</H1>
+            <br>
+            <h3>Para poder ver las noticias haz click en en boton "Noticiales Actuales" así podrás ver las noticias actuales más relevantes.</h3>
+            
+        <hr>
+        <br>
+        <div class="row">
+            <button id="btn2" class="btn btn-primary " >
+                Noticiales Actuales
+            </button>
+        </div>
+        
+        <div class="row">
+            <table class="table" id="tabla2">
+                <tr>
+                    <td style="color: white; " > Titulo de la noticia </td>
+                    <td style="color: white; " > Descripción </td>
+                    <td style="color: white; " > Foto </td>
+                    <td style="color: white; " > Fecha </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script src ="js/jquery.js"> </script>
+<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity = "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin = "anonymous"></script>
+<script src = "https://code.jquery.com/jquery-3.4.1.min.js" integrity = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin = "anonymous"></script>
+
+
+<script>
+
+//Primera noticia
+    $(document).ready(function(){
+        $("#btn2").click(function(){
+            $.get("https://spaceflightnewsapi.net/api/v2/articles/60aecb15b9e9b90012b650ff",
+                function(data){ 
+
+
+                        $("#tabla2").append(
+                            "<tr>"+"<td>" + data.title + "</td>" + "<td>" + data.summary +"</td>" + "<td>" + "<img src='" + data.imageUrl + "'>" + "</td>"+"<td>" + data.publishedAt + "</td>" + "</tr>");
+
+            });
+        });
+    });
+//segunda noticia
+    $(document).ready(function(){
+        $("#btn2").click(function(){
+            $.get("https://spaceflightnewsapi.net/api/v2/articles/60ad485dcb56470013cd1324",
+                function(data){
+
+
+                        $("#tabla2").append(
+                            "<tr>"+"<td>" + data.title + "</td>" + "<td>" + data.summary +"</td>" + "<td>" + "<img src='" + data.imageUrl + "'>" + "</td>"+"<td>" + data.publishedAt + "</td>" + "</tr>");
+
+            });
+        });
+    });
+//Tercera noticia
+    $(document).ready(function(){
+        $("#btn2").click(function(){
+            $.get("https://spaceflightnewsapi.net/api/v2/articles/60ad3ca4cb56470013cd1323",
+                function(data){
+
+
+                        $("#tabla2").append(
+                            "<tr>"+"<td>" + data.title + "</td>" + "<td>" + data.summary +"</td>" + "<td>" + "<img src='" + data.imageUrl + "'>" + "</td>"+"<td>" + data.publishedAt + "</td>" + "</tr>");
+
+            });
+        });
+    });
+//Cuarta noticia
+    $(document).ready(function(){
+        $("#btn2").click(function(){
+            $.get("https://spaceflightnewsapi.net/api/v2/articles/60ad35a0cb56470013cd1322",
+                function(data){
+
+
+                        $("#tabla2").append(
+                            "<tr>"+"<td>" + data.title + "</td>" + "<td>" + data.summary +"</td>" + "<td>" + "<img src='" + data.imageUrl + "'>" + "</td>"+"<td>" + data.publishedAt + "</td>" + "</tr>");
+
+            });
+        });
+    });
+//Quinta noticia
+$(document).ready(function(){
+        $("#btn2").click(function(){
+            $.get("https://spaceflightnewsapi.net/api/v2/articles/60ae306ab9e9b90012b650f4",
+                function(data){
+
+
+                        $("#tabla2").append(
+                            "<tr>"+"<td>" + data.title + "</td>" + "<td>" + data.summary +"</td>" + "<td>" + "<img src='" + data.imageUrl + "'>" + "</td>"+"<td>" + data.publishedAt + "</td>" + "</tr>");
+
+            });
+        });
+    });
+</script>
+<footer>
+    <div class="footer1">
+        <div class="main-content">
+            <div class="left box">
+                <h2>Redes sociales</h2>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem illo commodi obcaecati cumque quisquam distinctio, recusandae earum tempora. Dolores eum corrupti at, a vero facere non id magni facilis maxime magnam ipsa aut et tempore nam! Alias iusto dolorum quibusdam, veritatis voluptates laborum. Sed adipisci nisi perspiciatis ratione debitis, expedita ducimus architecto eaque corporis reprehenderit a! Modi sed voluptatum fugit laudantium natus sunt error aliquam debitis voluptates, dolore reprehenderit exercitationem eum! Reprehenderit necessitatibus cum distinctio saepe facilis officia neque nostrum? Eius qui ullam saepe totam ad recusandae, vel cumque sed voluptatibus facere libero sint expedita deserunt nobis voluptates pariatur laborum!</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com"><span class="fa fa-facebook-f"></span></a>
+                        <a href="https://www.twitter.com"><span class="fa fa-twitter"></span></a>
+                        <a href="https://www.instagram.com"><span class="fa fa-instagram"></span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="center box">
+                <h2>Informacion</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fa fa-map-o"></span>
+                        <span class="text">Caos news, sucursal en DuocUC San Joaquin</span>
+                    </div>
+
+                    <div class="phone">
+                        <span class="fa fa-phone-square"></span>
+                        <span class="text">+56939458734</span>
+                    </div>
+
+                    <div class="place">
+                        <span class="fa fa-envelope-square"></span>
+                        <span class="text">Info@caosnews.com</span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="right box">
+                        <h2>Suscribete</h2>
+                        <div class="content">
+                            <form action="#">
+                                <div class="email">
+                                    <div class="text">Email *</div>
+                                    <input type="email" required>
+                                </div>
+                                <div class="msg">
+                                    <div class="text">Message*</div>
+                                    <textarea cols="25" rows="2" required></textarea>
+                                </div>
+                                <div class="btn"></div>
+                                <button type="submit">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
